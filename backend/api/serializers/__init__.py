@@ -1,0 +1,1 @@
+from api.serializers.customer_serializers import CustomerSerializer

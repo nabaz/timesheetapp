@@ -1,0 +1,3 @@
+[submodule "fronten"]
+	path = fronten
+	url = git@github.com:nabaz/timesheetapp.git

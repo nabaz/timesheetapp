@@ -1,0 +1,32 @@
+{{#paper-data-table sortProp="name" sortDir="desc" selectable=true as |table|}}
+{{#table.head as |head|}}
+  {{#head.column checkbox=true}}
+    {{#paper-checkbox disabled=true onChange=null}}{{/paper-checkbox}}
+  {{/head.column}}
+  {{#head.column sortProp="name"}}Id{{/head.column}}
+  {{#head.column sortProp="calories" numeric=true}}Name{{/head.column}}
+  {{#head.column sortProp="fat" numeric=true}}Email{{/head.column}}
+  {{#head.column sortProp="carbs" numeric=true}}Phone{{/head.column}}
+  {{#head.column sortProp="protein" numeric=true}}Address{{/head.column}}
+  {{#head.column}}Note{{/head.column}}
+{{/table.head}}
+{{#table.body as |body|}}
+  {{#each customers as |customer|}}
+    {{#body.row edit=true as |row|}}
+      {{#row.cell checkbox=true}}
+        {{#paper-checkbox
+          value=dessert.checked
+          onChange=(action (mut customer.checked))}}
+        {{/paper-checkbox}}
+      {{/row.cell}}
+      {{#row.cell}}{{customer.id}}{{/row.cell}}
+      {{#row.cell}}{{customer.name}}{{/row.cell}}
+      {{#row.cell}}{{customer.email}}{{/row.cell}}
+      {{#row.cell}}{{customer.phone}}{{/row.cell}}
+      {{#row.cell}}{{customer.address}}{{/row.cell}}
+      {{#row.cell}}{{customer.note}}{{/row.cell}}
+
+    {{/body.row}}
+  {{/each}}
+{{/table.body}}
+{{/paper-data-table}}
