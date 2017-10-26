@@ -20,6 +20,7 @@ class CustomerSerializer(serializers.Serializer):
         model = Customer
 
     def create(self, validated_data):
+        print(validated_data)
         return Customer.objects.create(**validated_data)
 
     def update(self, instance, validated_data):

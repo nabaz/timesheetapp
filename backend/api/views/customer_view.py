@@ -6,7 +6,6 @@ from rest_framework.parsers import JSONParser
 from api.models import Customer
 from api.serializers.customer_serializers import CustomerSerializer
 
-
 @csrf_exempt
 def customer(request):
     if request.method == 'GET':
@@ -15,7 +14,7 @@ def customer(request):
         return JsonResponse(serializer.data, safe=False)
 
     elif request.method == 'POST':
-        data = JSONParser().CustomerSerializer(request)
+        data = JSONParser().parse(request)
         serializer = CustomerSerializer(data=data)
         if serializer.is_valid():
             serializer.save()

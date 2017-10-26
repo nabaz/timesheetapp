@@ -30,3 +30,19 @@
   {{/each}}
 {{/table.body}}
 {{/paper-data-table}}
+
+{{#paper-form onSubmit=(route-action "saveCustomer") as |form|}}
+  <div class="layout-row">
+    <div class="layout-column flex-50">
+      {{form.input label="Full Name" value=name onChange=(action (mut name)) required=true}}
+      {{form.input label="Email" value=email onChange=(action (mut email))}}
+      {{form.input label="Phone" value=phone onChange=(action (mut phone))}}
+      {{form.input label="Note" value=note onChange=(action (mut note))}}
+      {{form.input label="Status" value=status onChange=(action (mut status))}}
+    </div>
+
+  </div>
+  <div class="layout-row">
+    {{#form.submit-button raised=true primary=true}}Submit{{/form.submit-button}}
+  </div>
+{{/paper-form}}
